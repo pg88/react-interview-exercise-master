@@ -1,32 +1,29 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './FriendListApp.css';
 import Paginate from '../components/Paginate'
 
-import {addFriend, deleteFriend, starFriend} from '../actions/FriendsActions';
-import { FriendList, AddFriendInput } from '../components';
+import { addFriend } from '../actions/FriendsActions';
+import { AddFriendInput } from '../components';
 
 class FriendListApp extends Component {
 
   render () {
     const { friendlist: { friendsById }} = this.props;
     const paginationSettings = {
-        itemsToShow: 2,
-        totalItems: friendsById.length
+        firstPage: 1,
+        itemsToShow: 2
     };
 
     const actions = {
-      addFriend: this.props.addFriend,
-      deleteFriend: this.props.deleteFriend,
-      starFriend: this.props.starFriend
+      addFriend: this.props.addFriend
     };
 
     return (
       <div className={styles.friendListApp}>
         <h1>The FriendList</h1>
         <AddFriendInput addFriend={actions.addFriend} />
-        <Paginate friends={friendsById} settings={paginationSettings} />
-        <FriendList friends={friendsById} actions={actions} />
+        <Paginate list={friendsById} settings={paginationSettings} />
       </div>
     );
   }
@@ -37,7 +34,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-  addFriend,
-  starFriend,
-  deleteFriend,
+  addFriend
 })(FriendListApp)
