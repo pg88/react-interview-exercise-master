@@ -1,0 +1,8 @@
+:local(.genderContainer) {
+    width: 100%;
+    display: block;
+}
+:local(.genderInputs) {
+    display: inline-block;
+    margin: 5px;
+}

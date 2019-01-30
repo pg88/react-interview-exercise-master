@@ -13,6 +13,7 @@ class FriendListItem extends Component {
                     </div>
                     <div>
                         <small> { this.props.commonFriends }  friends in common</small>
+                        <small> { this.props.gender }  friends in common</small>
                     </div>
                 </div>
                 <div className={ styles.friendActions }>
@@ -38,6 +39,7 @@ FriendListItem.propTypes = {
     starred: PropTypes.bool,
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
+    gender: PropTypes.string.isRequired,
     starFriend: PropTypes.func.isRequired,
     commonFriends: PropTypes.number.isRequired,
 };

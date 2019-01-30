@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
+import { connect } from 'react-redux';
 import styles from './AddFriendInput.css';
 import GenderSelection from './GenderSelection'
 
@@ -7,7 +8,10 @@ class AddFriendInput extends Component {
 
     constructor(props, context) {
         super(props, context);
-        this.state = { name: this.props.name || '' };
+        this.state = {
+            name: this.props.name || '',
+            gender: ""
+        };
     }
 
     handleChange(e) {
@@ -20,13 +24,12 @@ class AddFriendInput extends Component {
 
     handleSubmit(e) {
         const name = e.target.value.trim();
-        debugger;
         if (e.which === 13 && this.validate()) {
            this.addNewFriend(name);
         }
     }
     addNewFriend(name) {
-        this.props.addFriend(name);
+        this.props.addFriend(name, this.state.gender);
         this.setState({ name: '' });
     }
 
@@ -39,6 +42,9 @@ class AddFriendInput extends Component {
     }
     handleForm() {
         return this.validate() ? this.addNewFriend(this.state.name) : false;
+    }
+    setGender (gender) {
+        this.setState({ gender: gender });
     }
 
     render() {
@@ -53,10 +59,10 @@ class AddFriendInput extends Component {
                     onChange={ this.handleChange.bind(this) }
                     onKeyDown={ this.handleSubmit.bind(this) }/>
 
-                {this.showError()}
+                { this.showError() }
 
-                <GenderSelection/>
-                <button disabled={ !this.state.name } onClick={ this.handleForm.bind(this) }>
+                <GenderSelection onSelectGender={ this.setGender.bind(this) }/>
+                <button className={ styles.addFriendsButton } disabled={ !this.state.name } onClick={ this.handleForm.bind(this) }>
                     ADD FRIEND
                 </button>
             </div>
@@ -68,5 +74,8 @@ class AddFriendInput extends Component {
 AddFriendInput.propTypes = {
     addFriend: PropTypes.func.isRequired
 };
-
-export default AddFriendInput
+function mapStateToProps(state) {
+    return state
+}
+export default connect(mapStateToProps, {
+})(AddFriendInput);

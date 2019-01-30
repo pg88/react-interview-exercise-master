@@ -13,6 +13,7 @@ class FriendList extends Component {
               <FriendListItem
                 key={ index }
                 name={ friend.name }
+                gender= { friend.gender }
                 starred={ friend.starred }
                 id={ friend.id ? friend.id : index }
                 commonFriends={friend.commonFriends }
