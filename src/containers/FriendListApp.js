@@ -20,10 +20,10 @@ class FriendListApp extends Component {
     };
 
     return (
-      <div className={styles.friendListApp}>
+      <div className={ styles.friendListApp }>
         <h1>The FriendList</h1>
-        <AddFriendInput addFriend={actions.addFriend} />
-        <Paginate list={friendsById} settings={paginationSettings} />
+        <AddFriendInput addFriend={ actions.addFriend } />
+        <Paginate list={ friendsById } settings={ paginationSettings } />
       </div>
     );
   }

@@ -1,0 +1,19 @@
+:local(.paginationControls) {
+    padding: 4px;
+}
+:local(.paginationControls button) {
+    width: 25px;
+    margin: 2px;
+    height: 25px;
+    padding: 1px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid white;
+    background: transparent;
+}
+:local(.paginationControls .active) {
+    font-weight: bolder;
+    background: white;
+    color:red;
+}

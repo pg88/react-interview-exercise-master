@@ -11,10 +11,11 @@ class FriendList extends Component {
           this.props.friends.map((friend, index) => {
             return (
               <FriendListItem
-                key={index}
-                id={index}
-                name={friend.name}
-                starred={friend.starred}
+                key={ index }
+                name={ friend.name }
+                starred={ friend.starred }
+                id={ friend.id ? friend.id : index }
+                commonFriends={friend.commonFriends }
                 {...this.props.actions} />
             );
           })
