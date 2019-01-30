@@ -3,6 +3,11 @@
     display: block;
 }
 :local(.genderInputs) {
+    margin: 8px;
+    color: white;
     display: inline-block;
-    margin: 5px;
+}
+:local(.genderLabel) {
+    color: white;
+    margin: 8px 0 0 8px;
 }

@@ -1,13 +1,23 @@
 :local(.addFriendInput) {
-  border-radius: 0;
-  border-color: #ABAAAA;
-  border-left: 0;
-  border-right: 0;
+    border-radius: 0;
+    border-color: #ABAAAA;
+    border-left: 0;
+    border-right: 0;
 }
+
 :local(.addFriendsButton) {
-  width: 100%;
-  padding: 4px;
-  color: white;
-  border-radius: 5px;
-  background: greenyellow;
+    width: 100%;
+    padding: 4px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #597aff;
+    border: 1px solid #415BB7;
+    -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+
+}
+:local(.addFriendsButton:hover:not([disabled])) {
+    background: #415BB7;
+    border: 1px solid #597aff;
 }

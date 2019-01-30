@@ -14,9 +14,7 @@ class GenderSelection extends Component {
 
     selectGender(e) {
         const selectedGender = e.target.value;
-        this.setState({
-            gender: selectedGender
-        });
+        this.setState({ gender: selectedGender });
         this.props.onSelectGender(selectedGender)
     }
 
@@ -37,8 +35,8 @@ class GenderSelection extends Component {
     render () {
         return(
             <div className={ styles.genderContainer }>
-                <div>
-                    <span><b>Gender:</b></span>
+                <div className={ styles.genderLabel }>
+                    <span>Gender:</span>
                 </div>
                 { this.displayGenders() }
             </div>

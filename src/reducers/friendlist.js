@@ -26,13 +26,12 @@ export default function friends(state = initialState, action) {
           ...state.friendsById,
           {
             name: action.name,
-            starred: false
+            starred: false,
+            gender: action.gender
           }
         ],
       };
     case types.DELETE_FRIEND:
-
-      debugger;
       return {
         ...state,
         friendsById: state.friendsById.filter((item, index) => index !== action.id)

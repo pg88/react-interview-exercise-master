@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { FriendList, AddFriendInput } from '../components';
 import styles from './Paginate.css';
-import { addFriend, deleteFriend, starFriend } from '../actions/FriendsActions';
 import { MALE } from '../constants/ActionTypes';
+import { FriendList, AddFriendInput } from '../components';
+import { addFriend, deleteFriend, starFriend } from '../actions/FriendsActions';
 
 class Paginate extends Component {
     constructor(props, context) {
@@ -69,7 +69,7 @@ class Paginate extends Component {
     getPaginatedData() {
         const data = this.props.list.map((item,index) =>  {
             item.id = index;
-            item.gender= !item.gender ? MALE : item.gender;
+            item.gender = !item.gender ? MALE : item.gender;
             item.commonFriends= item.commonFriends ? item.commonFriends : this.generateCommonFriends(1, 188);
             return item;
         });
@@ -88,15 +88,7 @@ class Paginate extends Component {
         };
         return (
             <div>
-                {data.map((item, index) => {
-                    return (
-                        <li  key={ index }>
-                            { item.name }
-                        </li>
-                    )
-                })}
                 <div>
-                    {this.state.pageCount}
                     <FriendList friends={ this.getPaginatedData() } actions={ actions } />
                 </div>
                 <div className={ styles.paginationControls }>

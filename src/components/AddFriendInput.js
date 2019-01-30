@@ -3,6 +3,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import styles from './AddFriendInput.css';
 import GenderSelection from './GenderSelection'
+import { FEMALE } from '../constants/ActionTypes';
 
 class AddFriendInput extends Component {
 
@@ -10,7 +11,7 @@ class AddFriendInput extends Component {
         super(props, context);
         this.state = {
             name: this.props.name || '',
-            gender: ""
+            gender: FEMALE
         };
     }
 
@@ -36,7 +37,7 @@ class AddFriendInput extends Component {
     showError() {
         if (!this.validate()) {
             return (
-                <span>error biaaaaatch</span>
+                <span></span>
             )
         }
     }
@@ -55,7 +56,7 @@ class AddFriendInput extends Component {
                     autoFocus="true"
                     className={ classnames('form-control', styles.addFriendInput) }
                     placeholder="Type the name of a friend"
-                    value={ this.state.name}
+                    value={ this.state.name }
                     onChange={ this.handleChange.bind(this) }
                     onKeyDown={ this.handleSubmit.bind(this) }/>
 
