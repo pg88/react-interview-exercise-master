@@ -5,7 +5,6 @@ import GenderSelection from './GenderSelection';
 import { MALE } from '../constants/ActionTypes';
 
 
-
 describe('AddFriendInput', () => {
     const propsData = {
         addFriend: jest.fn()
@@ -13,16 +12,17 @@ describe('AddFriendInput', () => {
     it('should render correctly', () => {
         expect(shallow(<AddFriendInput {...propsData} />)).toMatchSnapshot();
     });
-    /*it('should try to add empty data for', () => {
+    it('should try to add empty data for creating a new friend', () => {
         const component = shallow(<AddFriendInput {...propsData} />);
         component.setState({ name: '', gender: MALE });
         component.find('button').simulate('click');
         expect(component.state().error).not.toBeNull();
     });
-    it('should have the friend properties', () => {
+    it('should have the friend properties for submit', () => {
         const component = shallow(<AddFriendInput {...propsData} />);
-        expect(component.find("input[type='radio']").length).toBe(GENDER.length);
-        expect(component.find("input[type='text']").length).toBe(1);
-        expect(component.find('button').length).toBe(1);
-    })*/
+        component.setState({ name: 'JEST HEAVEN', gender: MALE  });
+        component.find('button').simulate('click');
+        expect(component.state().error).toBeNull();
+        expect(propsData.addFriend.mock.calls.length).toBe(1);
+    })
 });

@@ -26,7 +26,6 @@ ShallowWrapper {
           placeholder="Type the name of a friend"
           type="text"
           value="" />,
-        <span />,
         <GenderSelection
           onSelectGender={[Function]} />,
         <button
@@ -55,15 +54,6 @@ ShallowWrapper {
         "ref": null,
         "rendered": null,
         "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {},
-        "ref": null,
-        "rendered": null,
-        "type": "span",
       },
       Object {
         "instance": null,
@@ -108,7 +98,6 @@ ShallowWrapper {
             placeholder="Type the name of a friend"
             type="text"
             value="" />,
-          <span />,
           <GenderSelection
             onSelectGender={[Function]} />,
           <button
@@ -137,15 +126,6 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {},
-          "ref": null,
-          "rendered": null,
-          "type": "span",
         },
         Object {
           "instance": null,
