@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 import styles from './FriendListItem.css';
-import { FEMALE, MALE } from '../constants/ActionTypes';
+import { FEMALE, MALE, OTHER } from '../constants/ActionTypes';
 
 class FriendListItem extends Component {
 
@@ -16,7 +16,7 @@ class FriendListItem extends Component {
                         <small> { this.props.commonFriends }  friends in common</small>
                         <br/>
                         <i className={classnames('fa', {'fa-male': this.props.gender === MALE,
-                        'fa-female': this.props.gender === FEMALE})}></i>
+                        'fa-female': this.props.gender === FEMALE, 'fa-neuter': this.props.gender === OTHER })}></i>
                         <small> { this.props.gender } </small>
                     </div>
                 </div>

@@ -1,5 +1,7 @@
 :local(.paginationControls) {
+    width: 100%;
     padding: 4px;
+    display: block;
 }
 :local(.paginationControls button) {
     width: 25px;
@@ -9,16 +11,33 @@
     color: white;
     cursor: pointer;
     border-radius: 5px;
+    transition: all 1s;
     text-align: center;
     border: 1px solid white;
     background: transparent;
+    -webkit-transition: all 0.3s; /* Safari */
+}
+:local(.paginationControlsHolder) {
+    width: 80%;
+    height: 30px;
+    overflow: hidden;
+    display: inline-block;
+}
+:local(.paginationItems) {
+    width: 360px;
+}
+:local(.paginationControlsArrows) {
+    vertical-align: top;
 }
 :local(.paginationControls button:hover) {
     background: white;
     color: #849fff;
 }
-:local(.paginationControls button.active) {
+:local(.paginationControls button[disabled]) {
+    opacity: 0.4;
+}
+:local(.paginationControlsActive) {
     font-weight: bolder;
-    background: white;
-    color:red;
+    background: white !important;
+    color: #849fff !important;
 }

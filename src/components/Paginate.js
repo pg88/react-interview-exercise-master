@@ -53,14 +53,14 @@ class Paginate extends Component {
         const pageCount = this.state.pageCount;
         for (let i = 1; i <= pageCount; i++) {
             const baseClassName = 'paginationControls';
-            const activeClassName = i === this.state.currentPage ? `active` : '';
+            const activeClassName = i === this.state.currentPage ? styles.paginationControlsActive : '';
             controls.push(
                 <button
-                    className={`${baseClassName} ${activeClassName}`}
-                    key={i}
-                    onClick={() => this.setCurrentPage(i)}
+                    className={ activeClassName }
+                    key={ i }
+                    onClick={ () => this.setCurrentPage(i) }
                 >
-                    {i}
+                    { i }
                 </button>
             );
         }
@@ -78,9 +78,15 @@ class Paginate extends Component {
         const upperLimit = currentPage * pageSize;
         return data.slice((upperLimit - pageSize), upperLimit);
     }
+    movePage(isNextPage) {
+        let currentPage = this.state.currentPage;
+        if (this.state.pageCount > 8) {
+            const scroller = document.getElementById ("scroller");
+            isNextPage ? scroller.scrollLeft += 34 : scroller.scrollLeft -= 34
+        }
+        this.setCurrentPage(isNextPage ?  currentPage += 1 : currentPage -= 1 );
+    }
     render () {
-        //TODO DELETE CONST DATA
-        const data = this.props.list.length > 0 ? this.props.list : [];
         const actions = {
             addFriend: this.props.addFriend,
             starFriend: this.props.starFriend,
@@ -92,7 +98,17 @@ class Paginate extends Component {
                     <FriendList friends={ this.getPaginatedData() } actions={ actions } />
                 </div>
                 <div className={ styles.paginationControls }>
-                    { this.createPaginationControls() }
+                    <button className={ styles.paginationControlsArrows } disabled={ this.state.currentPage === 1 } onClick={ () => this.movePage(false) }>
+                        <i className="fa fa-arrow-left"></i>
+                    </button>
+                    <div className={ styles.paginationControlsHolder } id="scroller">
+                        <div className={ styles.paginationItems }>
+                            { this.createPaginationControls() }
+                        </div>
+                    </div>
+                    <button className={ styles.paginationControlsArrows } disabled={ this.state.currentPage === this.state.pageCount } onClick={ () => this.movePage(true) }>
+                        <i  className="fa fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         )

@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './GenderSelection.css';
-import { FEMALE, GENDER } from '../constants/ActionTypes';
+import { OTHER, GENDER } from '../constants/ActionTypes';
 
 
 class GenderSelection extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            gender: FEMALE
+            gender: OTHER
         }
     }
 

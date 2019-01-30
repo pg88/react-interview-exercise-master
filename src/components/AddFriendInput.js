@@ -1,9 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
-import { connect } from 'react-redux';
 import styles from './AddFriendInput.css';
 import GenderSelection from './GenderSelection'
-import { FEMALE } from '../constants/ActionTypes';
+import { OTHER } from '../constants/ActionTypes';
 
 class AddFriendInput extends Component {
 
@@ -11,7 +10,8 @@ class AddFriendInput extends Component {
         super(props, context);
         this.state = {
             name: this.props.name || '',
-            gender: FEMALE
+            gender: OTHER,
+            error: null
         };
     }
 
@@ -20,7 +20,14 @@ class AddFriendInput extends Component {
     }
 
     validate() {
-        return this.state.name.trim().length !== 0;
+        const name = this.state.name;
+        if (name.trim().length === 0) {
+            this.setState({
+                error: true,
+            });
+            return false
+        }
+        return true;
     }
 
     handleSubmit(e) {
@@ -32,14 +39,6 @@ class AddFriendInput extends Component {
     addNewFriend(name) {
         this.props.addFriend(name, this.state.gender);
         this.setState({ name: '' });
-    }
-
-    showError() {
-        if (!this.validate()) {
-            return (
-                <span></span>
-            )
-        }
     }
     handleForm() {
         return this.validate() ? this.addNewFriend(this.state.name) : false;
@@ -59,9 +58,6 @@ class AddFriendInput extends Component {
                     value={ this.state.name }
                     onChange={ this.handleChange.bind(this) }
                     onKeyDown={ this.handleSubmit.bind(this) }/>
-
-                { this.showError() }
-
                 <GenderSelection onSelectGender={ this.setGender.bind(this) }/>
                 <button className={ styles.addFriendsButton } disabled={ !this.state.name } onClick={ this.handleForm.bind(this) }>
                     ADD FRIEND
@@ -75,8 +71,4 @@ class AddFriendInput extends Component {
 AddFriendInput.propTypes = {
     addFriend: PropTypes.func.isRequired
 };
-function mapStateToProps(state) {
-    return state
-}
-export default connect(mapStateToProps, {
-})(AddFriendInput);
+export default AddFriendInput;
