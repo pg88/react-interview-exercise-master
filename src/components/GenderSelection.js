@@ -25,6 +25,7 @@ class GenderSelection extends Component {
                     type='radio'
                     name='gender'
                     value={ value }
+                    checked={ this.state.gender === value}
                     tabIndex={ key }
                     onChange={ this.selectGender.bind(this) }
                 /> { value }

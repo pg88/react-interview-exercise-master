@@ -38,7 +38,7 @@ class AddFriendInput extends Component {
     }
     addNewFriend(name) {
         this.props.addFriend(name, this.state.gender);
-        this.setState({ name: '' });
+        this.setState({ name: '', gender: OTHER });
     }
     handleForm() {
         return this.validate() ? this.addNewFriend(this.state.name) : false;

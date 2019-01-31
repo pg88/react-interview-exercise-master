@@ -64,7 +64,9 @@ class Paginate extends Component {
                 </button>
             );
         }
-        return controls;
+        return (
+            <div> {controls} </div>
+        );
     }
     getPaginatedData() {
         const data = this.props.list.map((item,index) =>  {
@@ -88,17 +90,16 @@ class Paginate extends Component {
     }
     render () {
         const actions = {
-            addFriend: this.props.addFriend,
             starFriend: this.props.starFriend,
             deleteFriend: this.props.deleteFriend
         };
         return (
             <div>
-                <div>
+                <div className="friendList">
                     <FriendList friends={ this.getPaginatedData() } actions={ actions } />
                 </div>
                 <div className={ styles.paginationControls }>
-                    <button className={ styles.paginationControlsArrows } disabled={ this.state.currentPage === 1 } onClick={ () => this.movePage(false) }>
+                    <button id="prev" className={ styles.paginationControlsArrows } disabled={ this.state.currentPage === 1 } onClick={ () => this.movePage(false) }>
                         <i className="fa fa-arrow-left"></i>
                     </button>
                     <div className={ styles.paginationControlsHolder } id="scroller">
@@ -106,7 +107,7 @@ class Paginate extends Component {
                             { this.createPaginationControls() }
                         </div>
                     </div>
-                    <button className={ styles.paginationControlsArrows } disabled={ this.state.currentPage === this.state.pageCount } onClick={ () => this.movePage(true) }>
+                    <button id='next' className={ styles.paginationControlsArrows } disabled={ this.state.currentPage === this.state.pageCount } onClick={ () => this.movePage(true) }>
                         <i  className="fa fa-arrow-right"></i>
                     </button>
                 </div>
@@ -123,7 +124,6 @@ function mapStateToProps(state) {
     return state
 }
 export default connect(mapStateToProps, {
-    addFriend,
     starFriend,
     deleteFriend
 })(Paginate);
