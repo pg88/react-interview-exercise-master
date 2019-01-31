@@ -5,6 +5,7 @@ import Paginate from '../components/Paginate'
 
 import { addFriend } from '../actions/FriendsActions';
 import { AddFriendInput } from '../components';
+import logo from '../logo.svg';
 
 class FriendListApp extends Component {
 
@@ -21,7 +22,8 @@ class FriendListApp extends Component {
 
     return (
       <div className={ styles.friendListApp }>
-        <h1>The FriendList</h1>
+
+        <h1> <img src={ logo } className="App-logo" alt="logo" /> The FriendList</h1>
         <AddFriendInput addFriend={ actions.addFriend } />
         <Paginate list={ friendsById } settings={ paginationSettings } />
       </div>

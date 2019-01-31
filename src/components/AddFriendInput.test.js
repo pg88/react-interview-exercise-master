@@ -5,14 +5,13 @@ import GenderSelection from './GenderSelection';
 import { MALE } from '../constants/ActionTypes';
 
 
+
 describe('AddFriendInput', () => {
     const propsData = {
         addFriend: jest.fn()
     };
-    it('should render correctly', () => {
-        expect(shallow(<AddFriendInput {...propsData} />)).toMatchSnapshot();
-    });
-    it('should try to add empty data for creating a new friend', () => {
+
+    it('should try to add empty data for creating a new f', () => {
         const component = shallow(<AddFriendInput {...propsData} />);
         component.setState({ name: '', gender: MALE });
         component.find('button').simulate('click');

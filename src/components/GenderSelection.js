@@ -8,7 +8,7 @@ class GenderSelection extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            gender: OTHER
+            gender: undefined
         }
     }
 
@@ -19,29 +19,34 @@ class GenderSelection extends Component {
     }
 
     displayGenders() {
-        return GENDER.map((value, key) => {
-            return (<div key={ value } className={ styles.genderInputs }>
-                <input
-                    type='radio'
-                    name='gender'
-                    value={ value }
-                    checked={ this.state.gender === value}
-                    tabIndex={ key }
-                    onChange={ this.selectGender.bind(this) }
-                /> { value }
-            </div>)
-        })
+        return (
+            GENDER.map((value, key) => {
+            return (
+                <div key={ value } className={ styles.genderInputs }>
+                    <input
+                        type='radio'
+                        id={ value }
+                        name='gender'
+                        value={ value }
+                        checked={ this.state.gender === value}
+                        tabIndex={ key }
+                        onChange={ this.selectGender.bind(this) }
+                    /> { value }
+                </div>
+                );
+            })
+        )
     }
 
     render () {
-        return(
+        return (
             <div className={ styles.genderContainer }>
                 <div className={ styles.genderLabel }>
                     <span>Gender:</span>
                 </div>
                 { this.displayGenders() }
             </div>
-        )
+        );
     }
 }
 

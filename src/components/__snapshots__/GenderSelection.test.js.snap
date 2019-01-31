@@ -1,0 +1,466 @@
+exports[`GenderSelection tests should render correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GenderSelection />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className={undefined}>
+          <span>
+                    Gender:
+          </span>
+</div>,
+        Array [
+          <div
+            className={undefined}>
+            <input
+                        checked={false}
+                        id="Female"
+                        name="gender"
+                        onChange={[Function]}
+                        tabIndex={0}
+                        type="radio"
+                        value="Female" />
+             
+            Female
+</div>,
+          <div
+            className={undefined}>
+            <input
+                        checked={false}
+                        id="Male"
+                        name="gender"
+                        onChange={[Function]}
+                        tabIndex={1}
+                        type="radio"
+                        value="Male" />
+             
+            Male
+</div>,
+          <div
+            className={undefined}>
+            <input
+                        checked={false}
+                        id="Other"
+                        name="gender"
+                        onChange={[Function]}
+                        tabIndex={2}
+                        type="radio"
+                        value="Other" />
+             
+            Other
+</div>,
+        ],
+      ],
+      "className": undefined,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <span>
+            Gender:
+</span>,
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Gender:",
+          },
+          "ref": null,
+          "rendered": "Gender:",
+          "type": "span",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Female",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              checked={false}
+              id="Female"
+              name="gender"
+              onChange={[Function]}
+              tabIndex={0}
+              type="radio"
+              value="Female" />,
+            " ",
+            "Female",
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "id": "Female",
+              "name": "gender",
+              "onChange": [Function],
+              "tabIndex": 0,
+              "type": "radio",
+              "value": "Female",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          " ",
+          "Female",
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Male",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              checked={false}
+              id="Male"
+              name="gender"
+              onChange={[Function]}
+              tabIndex={1}
+              type="radio"
+              value="Male" />,
+            " ",
+            "Male",
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "id": "Male",
+              "name": "gender",
+              "onChange": [Function],
+              "tabIndex": 1,
+              "type": "radio",
+              "value": "Male",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          " ",
+          "Male",
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": "Other",
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <input
+              checked={false}
+              id="Other"
+              name="gender"
+              onChange={[Function]}
+              tabIndex={2}
+              type="radio"
+              value="Other" />,
+            " ",
+            "Other",
+          ],
+          "className": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "checked": false,
+              "id": "Other",
+              "name": "gender",
+              "onChange": [Function],
+              "tabIndex": 2,
+              "type": "radio",
+              "value": "Other",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+          " ",
+          "Other",
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className={undefined}>
+            <span>
+                        Gender:
+            </span>
+</div>,
+          Array [
+            <div
+              className={undefined}>
+              <input
+                            checked={false}
+                            id="Female"
+                            name="gender"
+                            onChange={[Function]}
+                            tabIndex={0}
+                            type="radio"
+                            value="Female" />
+               
+              Female
+</div>,
+            <div
+              className={undefined}>
+              <input
+                            checked={false}
+                            id="Male"
+                            name="gender"
+                            onChange={[Function]}
+                            tabIndex={1}
+                            type="radio"
+                            value="Male" />
+               
+              Male
+</div>,
+            <div
+              className={undefined}>
+              <input
+                            checked={false}
+                            id="Other"
+                            name="gender"
+                            onChange={[Function]}
+                            tabIndex={2}
+                            type="radio"
+                            value="Other" />
+               
+              Other
+</div>,
+          ],
+        ],
+        "className": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <span>
+              Gender:
+</span>,
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Gender:",
+            },
+            "ref": null,
+            "rendered": "Gender:",
+            "type": "span",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Female",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                checked={false}
+                id="Female"
+                name="gender"
+                onChange={[Function]}
+                tabIndex={0}
+                type="radio"
+                value="Female" />,
+              " ",
+              "Female",
+            ],
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "id": "Female",
+                "name": "gender",
+                "onChange": [Function],
+                "tabIndex": 0,
+                "type": "radio",
+                "value": "Female",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            " ",
+            "Female",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Male",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                checked={false}
+                id="Male"
+                name="gender"
+                onChange={[Function]}
+                tabIndex={1}
+                type="radio"
+                value="Male" />,
+              " ",
+              "Male",
+            ],
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "id": "Male",
+                "name": "gender",
+                "onChange": [Function],
+                "tabIndex": 1,
+                "type": "radio",
+                "value": "Male",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            " ",
+            "Male",
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": "Other",
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                checked={false}
+                id="Other"
+                name="gender"
+                onChange={[Function]}
+                tabIndex={2}
+                type="radio"
+                value="Other" />,
+              " ",
+              "Other",
+            ],
+            "className": undefined,
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "checked": false,
+                "id": "Other",
+                "name": "gender",
+                "onChange": [Function],
+                "tabIndex": 2,
+                "type": "radio",
+                "value": "Other",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            " ",
+            "Other",
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

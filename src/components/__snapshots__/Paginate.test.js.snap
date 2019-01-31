@@ -1,4 +1,4 @@
-exports[`Paginate tests should render correctly 1`] = `
+exports[`Paginate tests should render correctly components 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Provider

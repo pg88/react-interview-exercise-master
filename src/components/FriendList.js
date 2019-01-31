@@ -6,7 +6,7 @@ import FriendListItem from './FriendListItem';
 class FriendList extends Component {
   render () {
     return (
-      <ul className={styles.friendList}>
+      <ul className={ styles.friendList }>
         {
           this.props.friends.map((friend, index) => {
             return (

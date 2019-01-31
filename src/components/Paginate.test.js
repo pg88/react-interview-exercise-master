@@ -3,6 +3,7 @@ import { mount, shallow } from 'enzyme';
 import Paginate from './Paginate';
 import { Provider, connect } from 'react-redux';
 import * as reducers from '../reducers';
+import GenderSelection from './GenderSelection';
 import { combineReducers, createStore } from 'redux';
 import { FriendList, AddFriendInput, FriendListItem } from '../components';
 
@@ -53,15 +54,19 @@ describe('Paginate tests', () => {
             itemsToShow: 2
         });
     });
-    it('should render correctly', () => {
+    it('should render correctly components', () => {
         const component = <Provider store={ store }>
             <Paginate {...propsData} />
         </Provider>;
         const shallowedComponent = shallow(component);
         expect(shallowedComponent).toMatchSnapshot();
     });
-    it('should render correctly2 ', () => {
-        const mountedComponent = mount( <Paginate {...propsData} />);
-        expect(wrapper.find('#prev')).to.have.lengthOf(1);
+    xit('should render correctly pagination', () => {
+        const component = <Provider store={ store }>
+            <Paginate {...propsData} />
+        </Provider>;
+        const mountedComponent = mount(component);
+        expect(mountedComponent.find('#prev'));
+        expect(mountedComponent.find('#prevaaa'));
     });
 });

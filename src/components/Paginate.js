@@ -52,12 +52,11 @@ class Paginate extends Component {
         let controls = [];
         const pageCount = this.state.pageCount;
         for (let i = 1; i <= pageCount; i++) {
-            const baseClassName = 'paginationControls';
             const activeClassName = i === this.state.currentPage ? styles.paginationControlsActive : '';
             controls.push(
                 <button
-                    className={ activeClassName }
                     key={ i }
+                    className={ activeClassName }
                     onClick={ () => this.setCurrentPage(i) }
                 >
                     { i }
@@ -89,17 +88,13 @@ class Paginate extends Component {
         this.setCurrentPage(isNextPage ?  currentPage += 1 : currentPage -= 1 );
     }
     render () {
-        const actions = {
-            starFriend: this.props.starFriend,
-            deleteFriend: this.props.deleteFriend
-        };
         return (
             <div>
                 <div className="friendList">
-                    <FriendList friends={ this.getPaginatedData() } actions={ actions } />
+                    <FriendList friends={ this.getPaginatedData() } actions={ this.props } />
                 </div>
                 <div className={ styles.paginationControls }>
-                    <button id="prev" className={ styles.paginationControlsArrows } disabled={ this.state.currentPage === 1 } onClick={ () => this.movePage(false) }>
+                    <button id="preve" className={ styles.paginationControlsArrows } disabled={ this.state.currentPage === 1 } onClick={ () => this.movePage(false) }>
                         <i className="fa fa-arrow-left"></i>
                     </button>
                     <div className={ styles.paginationControlsHolder } id="scroller">
